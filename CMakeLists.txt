@@ -2,8 +2,11 @@ cmake_minimum_required(VERSION 3.0.2)
 project(cartgrapher_navigation)
 
 find_package(catkin REQUIRED
+  rospy
   roscpp
   roslib
+  move_base
+  actionlib
   cartographer_ros
   geometry_msgs
   rospy
@@ -19,7 +22,7 @@ include("${CARTOGRAPHER_CMAKE_DIR}/functions.cmake")
 catkin_package(
 #  INCLUDE_DIRS include
   LIBRARIES cartgrapher_navigation
-  CATKIN_DEPENDS roscpp
+  CATKIN_DEPENDS actionlib geometry_msgs move_base rospy roscpp tf std_msgs
   DEPENDS system_lib
 )
 
