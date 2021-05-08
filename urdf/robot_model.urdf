@@ -13,7 +13,7 @@
       <geometry>
         <cylinder length="0.03" radius="0.03" />
       </geometry>
-      <material name="gray" />
+      <material name="gray" />                             
     </visual>
   </link>
 
