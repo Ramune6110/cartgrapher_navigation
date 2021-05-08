@@ -1,5 +1,5 @@
 <launch>
-		<!-- Load robot description and start state publisher-->
+    <!-- Load robot description and start state publisher-->
     <param name="robot_description" textfile="$(find cartgrapher_navigation)/urdf/robot_model.urdf" />
 
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
@@ -23,6 +23,7 @@
 		<!-- Additional node which converts Cartographer map into ROS occupancy grid map. Not used and can be skipped in this case -->
     <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros" type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
     
+    <!-- move base -->
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
       <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
       <rosparam file="$(find cartgrapher_navigation)/param/costmap_common_params.yaml" command="load" ns="global_costmap"/>
