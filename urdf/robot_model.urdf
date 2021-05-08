@@ -1,4 +1,4 @@
-<robot name="head_2d">
+<robot name="robot_model">
 
   <material name="orange">
     <color rgba="1.0 0.5 0.2 1" />
