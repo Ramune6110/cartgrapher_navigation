@@ -31,7 +31,7 @@ double speed_lin = 0.0;
  **********************************************************************/
 void messageCb( const geometry_msgs::Twist& msg){
   speed_ang = msg.angular.z;
-  speed_lin = msg.linear.x;
+  speed_lin = -msg.linear.x;
   w_r = (speed_lin/wheel_rad) + ((speed_ang*wheel_sep)/(2.0*wheel_rad));
   w_l = (speed_lin/wheel_rad) - ((speed_ang*wheel_sep)/(2.0*wheel_rad));
 }
@@ -86,6 +86,8 @@ void MotorL(int Pulse_Width1){
      analogWrite(EN_L, Pulse_Width1);
      digitalWrite(IN1_L, LOW);
      digitalWrite(IN2_L, HIGH);
+     /*digitalWrite(IN1_L, LOW);
+     digitalWrite(IN2_L, HIGH);*/
  }
 
  if (Pulse_Width1 < 0){
@@ -97,6 +99,8 @@ void MotorL(int Pulse_Width1){
      analogWrite(EN_L, Pulse_Width1);
      digitalWrite(IN1_L, HIGH);
      digitalWrite(IN2_L, LOW);
+     /*digitalWrite(IN1_L, LOW);
+     digitalWrite(IN2_L, HIGH);*/
  }
 
  if (Pulse_Width1 == 0){
@@ -115,6 +119,8 @@ void MotorR(int Pulse_Width2){
      analogWrite(EN_R, Pulse_Width2);
      digitalWrite(IN1_R, LOW);
      digitalWrite(IN2_R, HIGH);
+     /*digitalWrite(IN1_R, HIGH);
+     digitalWrite(IN2_R, LOW);*/
  }
 
  if (Pulse_Width2 < 0){
@@ -126,6 +132,8 @@ void MotorR(int Pulse_Width2){
      analogWrite(EN_R, Pulse_Width2);
      digitalWrite(IN1_R, HIGH);
      digitalWrite(IN2_R, LOW);
+     /*digitalWrite(IN1_R, LOW);
+     digitalWrite(IN2_R, HIGH);*/
  }
 
  if (Pulse_Width2 == 0){
