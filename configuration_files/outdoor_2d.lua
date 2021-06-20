@@ -56,7 +56,8 @@ TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(0.2)
 -- for current lidar only 1 is good value
 TRAJECTORY_BUILDER_2D.num_accumulated_range_data = 1
 
-POSE_GRAPH.constraint_builder.min_score = 0.65
+-- POSE_GRAPH.constraint_builder.min_score = 0.65
+POSE_GRAPH.constraint_builder.min_score = 0.8
 POSE_GRAPH.constraint_builder.global_localization_min_score = 0.65
 POSE_GRAPH.optimization_problem.huber_scale = 1e2
 POSE_GRAPH.optimize_every_n_nodes = 35
